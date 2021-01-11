@@ -154,35 +154,35 @@ export default {
       saveTodos();
     }
 
-/*     const body = document.body
+    const body = document.body
     const theme = localStorage.getItem('theme')
     if (theme) {
-        body.classList.add(theme) 
-    } */
+        body.classList.add('light') 
+    }
 
-    const themeMap = {
+/*     const themeMap = {
       dark: 'light',
       light: 'dark',
 
-    };
+    }; */
 
-    const theme = localStorage.getItem('theme');
+/*     const theme = localStorage.getItem('theme', 'light');
     const bodyClass = document.body.classList;
-    theme && bodyClass.add(theme);  
+    theme && bodyClass.add(theme);   */
     const switchTheme = () => {
-/*       if(body.classList.contains('light')){
+      if(body.classList.contains('light')){
       body.classList.replace('light', 'dark');
       localStorage.setItem('theme', 'dark')
      } else {
        body.classList.replace('dark', 'light');
        localStorage.setItem('theme', 'light')
-     } */
-     const current = localStorage.getItem('theme');
-    const next = themeMap[current];
+     }
+/*      const current = localStorage.getItem('theme');
+  const next = themeMap[current];
 
-    bodyClass.replace(current, next);
-    localStorage.setItem('theme', next);
-  }
+  bodyClass.replace(current, next);
+  localStorage.setItem('theme', next); */
+    }
 
     const deleteCompleted = () => {
       todos.value = todos.value.filter(item => !item.done)
