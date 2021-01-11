@@ -173,18 +173,18 @@ export default {
     if(theme !== 'light') {theme = 'light'}
     bodyClass.add(theme);  
     const switchTheme = () => {
-/*       if(body.classList.contains('light')){
-      body.classList.replace('light', 'dark');
+      if(bodyClass.contains('light')){
+      bodyClass.replace('light', 'dark');
       localStorage.setItem('theme', 'dark')
      } else {
-       body.classList.replace('dark', 'light');
+       bodyClass.replace('dark', 'light');
        localStorage.setItem('theme', 'light')
-     } */
-     const current = localStorage.getItem('theme');
+     }
+/*      const current = localStorage.getItem('theme');
   const next = themeMap[current];
 
   bodyClass.replace(current, next);
-  localStorage.setItem('theme', next);
+  localStorage.setItem('theme', next); */
     }
 
     const deleteCompleted = () => {
