@@ -52,7 +52,7 @@
               class="delete" 
               width="15px" 
               height="15px" 
-              src="~@/assets/icon-cross.svg" 
+              src="~@/assets/images/icon-cross.svg" 
               alt="cross"
             >
           </li>
@@ -155,12 +155,10 @@ export default {
     }
 
     const body = document.body
-    const theme = localStorage.getItem('theme')
-    if (theme) {
-        body.classList.add(theme) 
-    }
+const theme = localStorage.getItem('theme');
+if (theme !== 'dark') theme = 'light'
+
     const switchTheme = () => {
-      const headerImg = document.querySelector('.header')
       if(body.classList.contains('light')){
       body.classList.replace('light', 'dark');
       localStorage.setItem('theme', 'dark')
@@ -234,13 +232,13 @@ export default {
     --Very-Dark-Grayish-Blue: #393A4C;
 
     --blue-text: #1D86D5;
-    --bg-mobile-light: url("~@/assets/bg-mobile-light.jpg");
-    --bg-desktop-light: url("~@/assets/bg-desktop-light.jpg");
-    --theme-icon-light: url("~@/assets/icon-moon.svg");
-    --check-icon: url("~@/assets/icon-check.svg");
-    --bg-mobile-dark: url("~@/assets/bg-mobile-dark.jpg");
-    --bg-desktop-dark: url("~@/assets/bg-desktop-dark.jpg");
-    --theme-icon-dark: url(" ~@/assets/icon-sun.svg"); 
+    --bg-mobile-light: url("~@/assets/images/bg-mobile-light.jpg");
+    --bg-desktop-light: url("~@/assets/images/bg-desktop-light.jpg");
+    --theme-icon-light: url("~@/assets/images/icon-moon.svg");
+    --check-icon: url("~@/assets/images/icon-check.svg");
+    --bg-mobile-dark: url("~@/assets/images/bg-mobile-dark.jpg");
+    --bg-desktop-dark: url("~@/assets/images/bg-desktop-dark.jpg");
+    --theme-icon-dark: url(" ~@/assets/images/icon-sun.svg"); 
 /*     --bg-mobile-light: url("./images/bg-mobile-light.jpg");
     --bg-desktop-light: url("./images/bg-desktop-light.jpg");
     --theme-icon-light: url("./images/icon-moon.svg");
@@ -471,7 +469,7 @@ input[type=checkbox]::before {
     transition: all .4s 
 }
 input[type=checkbox]:after {
-    content: url("~@/assets/icon-check.svg");
+    content: url("~@/assets/images/vicon-check.svg");
     font-size: 1rem;
     color: var(--list-background);
     display: none;
