@@ -168,10 +168,9 @@ export default {
 
     };
 
-    let theme = localStorage.getItem('theme');
+    let theme = localStorage.getItem('theme','light');
     const bodyClass = document.body.classList;
-    if (theme == null) {theme = 'light'}
-    theme && bodyClass.add(theme);  
+    bodyClass.add(theme);  
     const switchTheme = () => {
 /*       if(body.classList.contains('light')){
       body.classList.replace('light', 'dark');
