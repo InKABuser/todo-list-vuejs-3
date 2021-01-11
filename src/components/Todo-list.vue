@@ -154,19 +154,35 @@ export default {
       saveTodos();
     }
 
-    const body = document.body
-const theme = localStorage.getItem('theme');
-if (theme !== 'dark') theme = 'light'
+/*     const body = document.body
+    const theme = localStorage.getItem('theme')
+    if (theme) {
+        body.classList.add(theme) 
+    } */
 
+    const themeMap = {
+      dark: 'light',
+      light: 'dark',
+
+    };
+
+    const theme = localStorage.getItem('theme');
+    const bodyClass = document.body.classList;
+    theme && bodyClass.add(theme);  
     const switchTheme = () => {
-      if(body.classList.contains('light')){
+/*       if(body.classList.contains('light')){
       body.classList.replace('light', 'dark');
       localStorage.setItem('theme', 'dark')
      } else {
        body.classList.replace('dark', 'light');
        localStorage.setItem('theme', 'light')
-     }
-    }
+     } */
+     const current = localStorage.getItem('theme');
+    const next = themeMap[current];
+
+    bodyClass.replace(current, next);
+    localStorage.setItem('theme', next);
+  }
 
     const deleteCompleted = () => {
       todos.value = todos.value.filter(item => !item.done)
@@ -469,7 +485,7 @@ input[type=checkbox]::before {
     transition: all .4s 
 }
 input[type=checkbox]:after {
-    content: url("~@/assets/images/vicon-check.svg");
+    content: url("~@/assets/images/icon-check.svg");
     font-size: 1rem;
     color: var(--list-background);
     display: none;
