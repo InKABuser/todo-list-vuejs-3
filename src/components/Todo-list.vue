@@ -162,15 +162,15 @@ export default {
         body.classList.add(theme) 
     } */
 
-    const themeMap = {
+/*     const themeMap = {
       dark: 'light',
       light: 'dark',
 
-    };
+    }; */
 
-    let theme = localStorage.getItem('theme');
+     let theme = localStorage.getItem('theme');
     const bodyClass = document.body.classList;
-    if(theme !== 'light') {theme = 'light'}
+    /*if(theme !== 'light') {theme = 'light'} */
     bodyClass.add(theme);  
     const switchTheme = () => {
       if(bodyClass.contains('light')){
