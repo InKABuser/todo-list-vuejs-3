@@ -168,10 +168,10 @@ export default {
 
     };
 
-    let theme = localStorage.getItem('theme', 'light');
+    let theme = localStorage.getItem('theme');
     const bodyClass = document.body.classList;
     if (theme !== 'dark') {theme = 'light'}
-    theme && bodyClass.add(theme);  
+     bodyClass.add(theme);  
     const switchTheme = () => {
 /*       if(body.classList.contains('light')){
       body.classList.replace('light', 'dark');
@@ -181,7 +181,7 @@ export default {
        localStorage.setItem('theme', 'light')
      } */
      const current = localStorage.getItem('theme');
-  const next = themeMap[current];
+    const next = themeMap[current];
 
   bodyClass.replace(current, next);
   localStorage.setItem('theme', next);
