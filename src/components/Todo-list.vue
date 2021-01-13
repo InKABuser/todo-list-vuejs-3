@@ -168,38 +168,6 @@ export default {
     }
   }
 
- /*    const body = document.body
-    let theme = localStorage.getItem('theme');
-  if (theme !== 'dark') theme = 'light' 
-     const theme = localStorage.getItem('theme')
-    if (theme ) {
-        body.classList.add(theme) 
-    }
-
-    const themeMap = {
-      dark: 'light',
-      light: 'dark',
-
-    };
-
-     let theme = localStorage.getItem('theme');
-    const bodyClass = document.body.classList;
-    if(theme !== 'light') {theme = 'light'}
-    bodyClass.add(theme);  
-    const switchTheme = () => {
-      if(bodyClass.contains('light')){
-      bodyClass.replace('light', 'dark');
-      localStorage.setItem('theme', 'dark')
-     } else {
-       bodyClass.replace('dark', 'light');
-       localStorage.setItem('theme', 'light')
-     }
-     const current = localStorage.getItem('theme');
-  const next = themeMap[current];
-
-  bodyClass.replace(current, next);
-  localStorage.setItem('theme', next);
-    } */
 
     const deleteCompleted = () => {
       todos.value = todos.value.filter(item => !item.done)
